@@ -5,9 +5,13 @@ const NavBar = () => {
     return (
         <header>
             <nav>
-                <img src="/logo.svg" alt="logo"/>
-
                 <ul>
+                    <li>
+                        <a>Chinyere Ukpong</a>
+                    </li>
+                </ul>
+
+                <ul className="mx-auto">
                     {navLinks.map(({name, link}) => (
                         <li key={name}>
                             <a href={link}>{name}</a>
