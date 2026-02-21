@@ -1,4 +1,4 @@
-import {navLinks} from "../../public/constants.ts";
+import {navLinks} from "../../public/constants";
 
 
 const NavBar = () => {
