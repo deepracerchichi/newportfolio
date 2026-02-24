@@ -1,4 +1,4 @@
-import {Fragment, useRef} from "react";
+import { useRef} from "react";
 import {PresentationControls} from "@react-three/drei";
 import MacbookModel16 from "../model/Macbook-16.tsx";
 import MacbookModel14 from "../model/Macbook-14.tsx";
@@ -74,6 +74,7 @@ const ModelSwitcher = ({scale, isMobile}: { scale: number; isMobile: boolean }) 
                     <MacbookModel16 scale={isMobile ? 0.05 : 0.08}/>
                 </group>
             </PresentationControls>
+            //@ts-ignore
             <PresentationControls {...controlsConfig}>
                 <group ref={smallMacbookRef}>
                     <MacbookModel14 scale={isMobile ? 0.03 : 0.06}/>
