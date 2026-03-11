@@ -10,6 +10,7 @@ import Highlights from "./components/Highlights.tsx";
 import Footer from "./components/Footer.tsx";
 
 
+
 gsap.registerPlugin(ScrollTrigger)
 
 

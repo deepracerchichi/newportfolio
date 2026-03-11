@@ -6,10 +6,14 @@ Source: https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b3031
 Title: macbook pro M3 16 inch 2024
 */
 
-import {useGLTF} from '@react-three/drei'
+import {useGLTF, useVideoTexture} from '@react-three/drei'
 import type { ThreeElements } from '@react-three/fiber'
 import * as THREE from 'three'
 import type { GLTF } from 'three-stdlib'
+import useMacbookStore from "../../store";
+import {useEffect} from "react";
+import {noChangeParts} from "../../../public/constants.ts";
+import {Color} from "three";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -38,8 +42,22 @@ type GLTFResult = GLTF & {
 
 
 export function MacbookModel(props: ThreeElements['group']) {
-    const { nodes, materials } = useGLTF('/models/macbook-transformed.glb') as unknown as GLTFResult
+    const { nodes, materials, scene } = useGLTF('/models/macbook-transformed.glb') as unknown as GLTFResult
 
+    const {color, texture} = useMacbookStore();
+    const screen = useVideoTexture(texture);
+
+    useEffect(() => {
+        scene.traverse((child) => {
+            if ((child as THREE.Mesh).isMesh) {
+                const mesh = child as THREE.Mesh
+                const mat = mesh.material as THREE.MeshStandardMaterial
+                if (!noChangeParts.includes(child.name)) {
+                    mat.color = new Color(color);
+                }
+            }
+        })
+    }, [color, scene])
 
     return (
         <group {...props} dispose={null}>
@@ -166,9 +184,10 @@ export function MacbookModel(props: ThreeElements['group']) {
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_123.geometry}
-                material={materials.sfCQkHOWyrsLmor}
                 rotation={[Math.PI / 2, 0, 0]}
-            />
+            >
+                <meshBasicMaterial map={screen}/>
+            </mesh>
             <mesh
                 castShadow
                 receiveShadow

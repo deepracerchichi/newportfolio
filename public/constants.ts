@@ -87,31 +87,35 @@ export const performanceImgPositions = [
 export const features = [
     {
         id: 1,
-        icon: "/feature-icon1.svg",
-        highlight: "Email AI.",
-        text: "Summarize and draft replies to emails instantly, so you stay on top of your inbox.",
-        styles: "left-5 md:left-20 top-[20%] opacity-0 translate-y-5",
+        icon: "/project-icon1.svg",
+        highlight: "Sheila ",
+        text: "Full-stack note-taking application built with MongoDB, Express, React, and Node.js. Features custom API, rate limiting, and modern UI.",
+        styles: "left-5 md:left-20 top-[24%] opacity-0 translate-y-5",
+        link: "https://sheila-mern-webapp.onrender.com/"
     },
     {
         id: 2,
         icon: "/feature-icon2.svg",
-        highlight: "Image AI.",
-        text: "Generate or edit images with ease. Just type what you imagine, and let AI bring it to life.",
-        styles: "right-5 md:right-20 top-[30%] opacity-0 translate-y-5",
+        highlight: "Listerr",
+        text: " Full stack web application built with POSTGRESQL, Express, React and Node.js for startups  to keep track of employees info and status. ",
+        styles: "right-5 md:right-20 top-[40%] opacity-0 translate-y-5",
+        link: "#"
     },
     {
         id: 3,
-        icon: "/feature-icon3.svg",
-        highlight: "Summarize AI.",
-        text: "Turn long articles, reports, or notes into clear, bite-sized summaries in seconds.",
-        styles: "left-5 md:left-20 top-[50%] opacity-0 translate-y-5",
+        icon: "/project-icon3.svg",
+        highlight: "Altread ",
+        text: "full stack mobile application built with Appwrite, Context Api, React Native and ",
+        styles: "left-5 md:left-20 top-[60%] opacity-0 translate-y-5",
+        link: "#"
     },
     {
         id: 4,
         icon: "/feature-icon4.svg",
-        highlight: "AirDrop.",
+        highlight: "",
         text: "Wirelessly share photos, large files, and more between your iPhone, your Mac, & other devices.",
-        styles: "right-5 md:right-20 top-[70%] opacity-0 translate-y-5",
+        styles: "right-5 md:right-20 top-[75%] opacity-0 translate-y-5",
+        link: "#"
     },
     {
         id: 5,
@@ -119,6 +123,7 @@ export const features = [
         highlight: "Writing Tool.",
         text: "Write smarter and faster, whether it’s blogs, essays, or captions, AI helps polish your words.",
         styles: "left-5 md:left-20 top-[90%] opacity-0 translate-y-5",
+        link: "#"
     },
 ];
 
